@@ -1,0 +1,92 @@
+.ingredientBoard {
+    position: relative;
+    overflow-y: auto;
+}
+
+.mainBoardInner {
+    composes: mainBoardInner from '../burger-ingredients/burger-ingredients.module.css';
+    max-height: 45vh;
+}
+
+.mainBoardHeading {
+    composes: mainBoardHeading from '../burger-ingredients/burger-ingredients.module.css';
+    visibility: hidden;
+}
+
+.mainBoardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.constructorElement {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.constructorElement:hover {
+    cursor: grab;
+}
+
+.constructorElementTop {
+    composes: constructorElement;
+    max-width: calc(100% - 50.95px);
+    margin-left: auto;
+    margin-right: 0.75rem;
+    margin-bottom: 1rem;
+
+}
+
+.constructorElementBottom {
+    composes: constructorElement;
+    max-width: calc(100% - 50.95px);
+    margin-left: auto;
+    margin-right: 0.75rem;
+    margin-top: 1rem;
+
+}
+
+.constructorElement > div {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0.5rem;
+}
+
+.constructorElement > div > span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.constructorElement > div > span > span:nth-child(3) {
+    margin-left: auto;
+}
+.constructorPayment{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding: 0 0.75rem 0 1rem;
+}
+
+.constructorPayment > svg {
+    height: 2.0625rem;
+    width: 2.0625rem;
+    margin-right: 2.5rem;
+}
+
+.constructorTotal {
+    font-family: Iceland, Arial, sans-serif;
+    font-size: 3rem;
+    line-height: 2.25rem;
+    composes: itemText from '../app-header/app-header.module.css';
+    margin-right: 0.25rem;
+}

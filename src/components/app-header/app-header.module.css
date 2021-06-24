@@ -1,0 +1,85 @@
+:root {
+    --max-width: 120rem;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.headerWrapper {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 20rem;
+    background-color: #1c1c21;
+}
+
+.headerInner {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerItem {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    margin-left: .5rem;
+}
+
+.headerItem > svg {
+    height: 22px;
+}
+
+.headerInner > svg {
+    height: 40px;
+    margin: 0 auto;
+}
+
+.itemText {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+    margin-left: .5rem;
+    color: #8585ad;
+}
+
+.headerItem:first-child {
+    margin-left: 0;
+}
+
+.headerItem:first-child > .itemText {
+    color: inherit;
+}
+
+@media screen and (max-width: 1280px) {
+    .headerWrapper {
+        padding: 1rem 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerWrapper {
+        padding: 1rem 5rem;
+    }
+
+    .headerInner {
+        flex-wrap: wrap;
+    }
+
+    .headerItem {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .headerInner > svg {
+        height: 50px;
+        order: -1;
+    }
+}
+

@@ -1,0 +1,50 @@
+.burgerBoard {
+    position: relative;
+    overflow-y: auto;
+}
+
+.mainBoardInner {
+    height: 100%;
+    max-height: 64vh;
+    padding: 0 .25rem 0 1rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.mainBoardContent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(17rem, 1fr));
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+
+}
+
+.tab {
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+.tab > div {
+    flex: 1 0 auto;
+    text-transform: capitalize;
+}
+
+.mainBoardHeading {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.boardName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+
