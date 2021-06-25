@@ -1,31 +1,31 @@
 import React from "react";
-import { Logo } from "@ya.praktikum/react-developer-burger-ui-components";
+import styles from "./app-header.module.css";
 import {
   BurgerIcon,
   ListIcon,
   ProfileIcon,
+  Logo,
 } from "@ya.praktikum/react-developer-burger-ui-components";
-import styles from "./app-header.module.css";
 
 const AppHeader = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
-        <div className={styles.headerInner}>
-          <div className={styles.headerItem}>
+        <nav className={styles.headerNavBar}>
+          <a href="#" className={styles.headerLink}>
             <BurgerIcon type={"primary"} />
-            <span className={styles.headerItemText}>Конструктор</span>
-          </div>
-          <div className={styles.headerItem}>
+            <span className={styles.headerLinkText}>Конструктор</span>
+          </a>
+          <a href="#" className={styles.headerLink}>
             <ListIcon type={"secondary"} />
-            <span className={styles.headerItemText}>Лента заказов</span>
-          </div>
+            <span className={styles.headerLinkText}>Лента заказов</span>
+          </a>
           <Logo />
-          <div className={styles.headerItem}>
+          <a href="#" className={styles.headerLink}>
             <ProfileIcon type={"secondary"} />
-            <span className={styles.headerItemText}>Личный кабинет</span>
-          </div>
-        </div>
+            <span className={styles.headerLinkText}>Личный кабинет</span>
+          </a>
+        </nav>
       </div>
     </header>
   );

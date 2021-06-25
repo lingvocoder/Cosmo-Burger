@@ -6,17 +6,17 @@ import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const types = [...new Set(data.map((card) => card.type))];
 
-const BurgerIngredients = () => {
+const BurgerIngredients = ({ ingredients }) => {
   const [current, setCurrent] = React.useState("main");
   return (
-    <div className={styles.burgerBoard}>
+    <section className={styles.burgerBoard}>
       <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
       <div className={styles.tab}>
-        {types.map((type) => {
+        {types.map((type, idx) => {
           return (
             <Tab
-              key={type}
-              active={current === `${type}`}
+              key={idx}
+              active={current === type}
               value={type}
               onClick={setCurrent}
             >
@@ -31,9 +31,9 @@ const BurgerIngredients = () => {
             <>
               <h2 className={styles.boardName}>{type}</h2>
               <div className={styles.mainBoardContent}>
-                {data.map((card) => {
+                {ingredients.map((card) => {
                   return card.type === type ? (
-                    <BurgerCard key={card._id} data={card} />
+                    <BurgerCard key={card._id} cardInfo={card} />
                   ) : null;
                 })}
               </div>
@@ -41,7 +41,7 @@ const BurgerIngredients = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 export default BurgerIngredients;

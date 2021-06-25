@@ -1,5 +1,6 @@
 :root {
     --max-width: 120rem;
+    ---bg-color-header: #1c1c21;
 }
 
 .header {
@@ -13,47 +14,49 @@
     margin-left: auto;
     margin-right: auto;
     padding: 1rem 20rem;
-    background-color: #1c1c21;
+    background-color: var(---bg-color-header);
 }
 
-.headerInner {
+.headerNavBar {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    max-width: var(--max-width);
     align-items: center;
+    justify-content: center;
 }
 
-.headerItem {
+.headerLink {
     display: flex;
     align-items: center;
     padding: 1rem 1.25rem;
     margin-left: .5rem;
+    text-decoration: none;
 }
 
-.headerItem > svg {
+.headerLink > svg {
     height: 22px;
 }
 
-.headerInner > svg {
+.headerNavBar > svg {
     height: 40px;
     margin: 0 auto;
 }
 
-.headerItemText {
+.headerLinkText {
+    margin-left: .5rem;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: normal;
-    margin-left: .5rem;
     color: #8585ad;
 }
 
-.headerItem:first-child {
+.headerLink:first-child {
     margin-left: 0;
 }
 
-.headerItem:first-child > .itemText {
-    color: inherit;
+.headerLink:first-child > .headerLinkText {
+    color: #ffffff;
 }
 
 @media screen and (max-width: 1280px) {
@@ -67,17 +70,17 @@
         padding: 1rem 5rem;
     }
 
-    .headerInner {
+    .headerNavBar {
         flex-wrap: wrap;
     }
 
-    .headerItem {
+    .headerLink {
         width: 100%;
         justify-content: center;
         margin-left: 0;
     }
 
-    .headerInner > svg {
+    .headerNavBar > svg {
         height: 50px;
         order: -1;
     }

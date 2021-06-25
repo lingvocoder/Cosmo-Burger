@@ -6,51 +6,51 @@ import {
   CurrencyIcon,
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
-import data from "../../utils/data";
 
-const BurgerConstructor = () => {
-  const topElement = data.slice(0, 1);
-  const bottomElement = data.slice(data.length - 1);
-  const newData = data.slice(1, data.length - 1);
+const BurgerConstructor = ({ constructor }) => {
+  const fixedBun = constructor.filter((elem) => elem.type === "bun");
+  const newData = constructor
+    .filter((elem) => elem.type !== "bun")
+    .map((elem) => elem);
   return (
-    <div className={styles.ingredientBoard}>
+    <section className={styles.ingredientBoard}>
       <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
-      {topElement.map((elem) => (
+      {[fixedBun.shift()].map((bun) => (
         <div className={styles.constructorElementTop}>
           <ConstructorElement
-            key={elem._id}
+            key={bun._id}
             type={"top"}
-            text={elem.name}
-            thumbnail={elem.image}
-            price={elem.price}
+            text={bun.name}
+            thumbnail={bun.image}
+            price={bun.price}
             isLocked={true}
           />
         </div>
       ))}
       <div className={styles.mainBoardInner}>
-        <div className={styles.mainBoardContent}>
-          {newData.map((card) => (
-            <div className={styles.constructorElement}>
+        <ul className={styles.mainBoardContent}>
+          {newData.map((item) => (
+            <li className={styles.constructorElement}>
               <DragIcon type={"primary"} />
               <ConstructorElement
-                key={card._id}
-                text={card.name}
-                thumbnail={card.image}
-                price={card.price}
-                isLocked={Math.random() < 0.5}
+                key={item._id}
+                text={item.name}
+                thumbnail={item.image}
+                price={item.price}
+                isLocked={false}
               />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-      {bottomElement.map((elem) => (
+      {[fixedBun.pop()].map((bun) => (
         <div className={styles.constructorElementBottom}>
           <ConstructorElement
-            key={elem._id}
+            key={bun._id}
             type={"bottom"}
-            text={elem.name}
-            thumbnail={elem.image}
-            price={elem.price}
+            text={bun.name}
+            thumbnail={bun.image}
+            price={bun.price}
             isLocked={true}
           />
         </div>
@@ -64,7 +64,7 @@ const BurgerConstructor = () => {
           Оформить заказ
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 

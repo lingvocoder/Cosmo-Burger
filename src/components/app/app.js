@@ -1,5 +1,5 @@
 import React from "react";
-import "./app.module.css";
+import "./index.module.css";
 import AppHeader from "../app-header/app-header";
 import MainContent from "../main-content/main-content";
 

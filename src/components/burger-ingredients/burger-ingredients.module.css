@@ -11,6 +11,19 @@
     scrollbar-width: thin;
 }
 
+.mainBoardInner::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mainBoardInner::-webkit-scrollbar-track {
+    background: #2F2F37;
+}
+
+.mainBoardInner::-webkit-scrollbar-thumb {
+    border: 3px solid #8585AD;
+    background: #8585AD;
+}
+
 .mainBoardContent {
     display: grid;
     grid-template-columns: repeat(2, minmax(17rem, 1fr));

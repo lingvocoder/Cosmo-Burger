@@ -2,20 +2,21 @@ import React from "react";
 import styles from "./main-content.module.css";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
+import data from "../../utils/data";
 
 const MainContent = () => {
   return (
     <main className={styles.main}>
-      <section className={styles.mainWrapper}>
+      <div className={styles.mainWrapper}>
         <div className={styles.mainInner}>
           <div className={styles.mainBoardLeft}>
-            <BurgerIngredients />
+            <BurgerIngredients ingredients={data} />
           </div>
           <div className={styles.mainBoardRight}>
-            <BurgerConstructor />
+            <BurgerConstructor constructor={data} />
           </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 };

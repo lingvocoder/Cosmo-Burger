@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./burger-card.module.css";
-import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
+import {
+  Counter,
+  CurrencyIcon,
+} from "@ya.praktikum/react-developer-burger-ui-components";
 
-const BurgerCard = ({ data }) => {
+const BurgerCard = ({ cardInfo }) => {
   return (
     <div className={styles.burgerCard}>
       <div className={styles.burgerCardRowTop}>
@@ -11,17 +13,17 @@ const BurgerCard = ({ data }) => {
         <span className={styles.burgerCardImageWrapper}>
           <img
             className={styles.burgerCardImage}
-            src={data.image}
-            alt={data.name}
+            src={cardInfo.image}
+            alt={cardInfo.name}
           />
         </span>
       </div>
       <div className={styles.burgerCardRowBottom}>
         <div className={styles.burgerPriceItem}>
-          <span className={styles.burgerCardPrice}>{data.price}</span>
+          <span className={styles.burgerCardPrice}>{cardInfo.price}</span>
           <CurrencyIcon type={"primary"} />
         </div>
-        <span className={styles.burgerCardTitle}>{data.name}</span>
+        <span className={styles.burgerCardTitle}>{cardInfo.name}</span>
       </div>
     </div>
   );
