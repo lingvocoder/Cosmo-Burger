@@ -14,16 +14,16 @@ const AppHeader = () => {
         <div className={styles.headerInner}>
           <div className={styles.headerItem}>
             <BurgerIcon type={"primary"} />
-            <span className={styles.itemText}>Конструктор</span>
+            <span className={styles.headerItemText}>Конструктор</span>
           </div>
           <div className={styles.headerItem}>
             <ListIcon type={"secondary"} />
-            <span className={styles.itemText}>Лента заказов</span>
+            <span className={styles.headerItemText}>Лента заказов</span>
           </div>
           <Logo />
           <div className={styles.headerItem}>
             <ProfileIcon type={"secondary"} />
-            <span className={styles.itemText}>Личный кабинет</span>
+            <span className={styles.headerItemText}>Личный кабинет</span>
           </div>
         </div>
       </div>

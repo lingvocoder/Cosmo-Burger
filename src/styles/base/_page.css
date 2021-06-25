@@ -1,5 +1,7 @@
 :root {
-    --font-main: "Jet Brains Mono", Arial, sans-serif;
+    --font-base: "Jet Brains Mono", Arial, sans-serif;
+    --bg-color-base: #1c1c21;
+    --font-color-base: #fff;
 }
 
 * {
@@ -14,9 +16,9 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-    background-color: #1c1c21;
-    color: #ffffff;
-    font-family: var(--font-main);
+    background-color: var(--bg-color-base);
+    color: var(--font-color-base);
+    font-family: var(--font-base);
     font-weight: normal;
     font-size: 16px;
     font-style: normal;
