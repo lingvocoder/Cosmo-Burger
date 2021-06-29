@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./burger-card.module.css";
 import {
   Counter,
@@ -9,7 +10,7 @@ const BurgerCard = ({ cardInfo }) => {
   return (
     <div className={styles.burgerCard}>
       <div className={styles.burgerCardRowTop}>
-        <Counter count={Math.floor(Math.random() * 10)} />
+        <Counter count={Math.floor((Math.random() * cardInfo.proteins) / 10)} />
         <span className={styles.burgerCardImageWrapper}>
           <img
             className={styles.burgerCardImage}
@@ -27,6 +28,10 @@ const BurgerCard = ({ cardInfo }) => {
       </div>
     </div>
   );
+};
+
+BurgerCard.propTypes = {
+  cardInfo: PropTypes.object,
 };
 
 export default BurgerCard;

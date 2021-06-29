@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.burgerCard:hover {
+    cursor: pointer;
+}
+
 .burgerCardRowTop {
     position: relative;
     height: auto;
@@ -23,7 +27,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
 }
 
 .burgerCardImageWrapper {

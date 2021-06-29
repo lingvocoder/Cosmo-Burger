@@ -34,3 +34,25 @@
     composes: mainBoardLeft;
 }
 
+@media screen and (max-width: 1880px) {
+    .mainWrapper {
+        padding-left: 16.25rem;
+        padding-right: 16.25rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .mainWrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .mainWrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+

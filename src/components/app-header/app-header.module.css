@@ -40,7 +40,7 @@
 
 .headerNavBar > svg {
     height: 40px;
-    margin: 0 auto;
+    margin: 0 calc(562px / 2) 0 auto;
 }
 
 .headerLinkText {
@@ -59,9 +59,16 @@
     color: #ffffff;
 }
 
+@media screen and (max-width: 1880px) {
+    .headerWrapper {
+        padding-left: 15rem;
+        padding-right: 15rem;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     .headerWrapper {
-        padding: 1rem 10rem;
+        padding: 1rem 1rem;
     }
 }
 

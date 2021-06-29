@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./burger-constructor.module.css";
 import {
   Button,
@@ -16,9 +17,9 @@ const BurgerConstructor = ({ constructor }) => {
     <section className={styles.ingredientBoard}>
       <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
       {[fixedBun.shift()].map((bun) => (
-        <div className={styles.constructorElementTop}>
+        <div key={bun._id} className={styles.constructorFixedElement}>
+          <DragIcon type={"primary"} />
           <ConstructorElement
-            key={bun._id}
             type={"top"}
             text={bun.name}
             thumbnail={bun.image}
@@ -30,10 +31,9 @@ const BurgerConstructor = ({ constructor }) => {
       <div className={styles.mainBoardInner}>
         <ul className={styles.mainBoardContent}>
           {newData.map((item) => (
-            <li className={styles.constructorElement}>
+            <li key={item._id} className={styles.constructorElement}>
               <DragIcon type={"primary"} />
               <ConstructorElement
-                key={item._id}
                 text={item.name}
                 thumbnail={item.image}
                 price={item.price}
@@ -44,9 +44,9 @@ const BurgerConstructor = ({ constructor }) => {
         </ul>
       </div>
       {[fixedBun.pop()].map((bun) => (
-        <div className={styles.constructorElementBottom}>
+        <div key={bun._id} className={styles.constructorFixedElement}>
+          <DragIcon type={"primary"} />
           <ConstructorElement
-            key={bun._id}
             type={"bottom"}
             text={bun.name}
             thumbnail={bun.image}
@@ -66,6 +66,9 @@ const BurgerConstructor = ({ constructor }) => {
       </div>
     </section>
   );
+};
+BurgerConstructor.propTypes = {
+  constructor: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default BurgerConstructor;

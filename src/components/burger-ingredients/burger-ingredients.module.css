@@ -40,8 +40,8 @@
     margin-bottom: 2.5rem;
 }
 
-.tab > div {
-    flex: 1 0 auto;
+.tab > .tabWrapper {
+    flex: 1 1 100%;
     text-transform: capitalize;
 }
 
@@ -59,6 +59,42 @@
     font-weight: bold;
     text-align: left;
     text-transform: capitalize;
+}
+
+@media screen and (max-width: 1920px) {
+    .mainBoardContent {
+        grid-template-columns: 66.67%;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .mainBoardContent {
+        grid-template-columns: 66.67%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerWrapper {
+        padding: 1rem 5rem;
+    }
+
+    .headerNavBar {
+        flex-wrap: wrap;
+    }
+
+    .headerLink {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .headerNavBar > svg {
+        height: 50px;
+        order: -1;
+    }
 }
 
 
