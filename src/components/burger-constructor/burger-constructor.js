@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./burger-constructor.module.css";
+import BurgerPayment from "../burger-payment/burger-payment";
 import {
-  Button,
   ConstructorElement,
-  CurrencyIcon,
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
@@ -55,18 +54,11 @@ const BurgerConstructor = ({ constructor }) => {
           />
         </div>
       ))}
-      <div className={styles.constructorPayment}>
-        <span className={styles.constructorTotal}>
-          {newData.reduce((acc, curr) => acc + curr.price, 0)}
-        </span>
-        <CurrencyIcon type={"primary"} />
-        <Button type={"primary"} size={"large"}>
-          Оформить заказ
-        </Button>
-      </div>
+      <BurgerPayment paymentData={newData} />
     </section>
   );
 };
+
 BurgerConstructor.propTypes = {
   constructor: PropTypes.arrayOf(PropTypes.object),
 };

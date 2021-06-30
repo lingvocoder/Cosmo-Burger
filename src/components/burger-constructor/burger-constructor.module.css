@@ -41,12 +41,15 @@
     max-width: 100%;
     padding: 0 .75rem 0 0.5rem;
 }
+
 .constructorFixedElement:nth-of-type(1) {
     margin-bottom: 1rem;
 }
+
 .constructorFixedElement:nth-last-of-type(2) {
     margin-top: 1rem;
 }
+
 .constructorFixedElement > svg {
     visibility: hidden;
 }
@@ -66,30 +69,6 @@
 
 .constructorElement > div > span > span:nth-child(3) {
     margin-left: auto;
-}
-
-.constructorPayment {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 2.5rem;
-    padding: 0 0.75rem 0 1rem;
-}
-
-.constructorPayment > svg {
-    height: 2.0625rem;
-    width: 2.0625rem;
-    margin-right: 2.5rem;
-}
-
-.constructorTotal {
-    font-family: Iceland, Arial, sans-serif;
-    font-size: 3rem;
-    line-height: 2.25rem;
-    composes: headerLinkText from '../app-header/app-header.module.css';
-    margin-right: 0.25rem;
 }
 
 @media screen and (max-width: 1920px) {

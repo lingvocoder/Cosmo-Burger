@@ -4,21 +4,13 @@ import styles from "./burger-ingredients.module.css";
 import BurgerCard from "../burger-card/burger-card";
 import data from "../../utils/data";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
+import localize from "../../utils/localize";
 
 const types = [...new Set(data.map((card) => card.type))];
 
-function localize(item) {
-  return item === "bun"
-    ? item === "main"
-      ? "начинки"
-      : "булки"
-    : item === "sauce"
-    ? "соусы"
-    : "начинки";
-}
-
 const BurgerIngredients = ({ ingredients }) => {
   const [current, setCurrent] = React.useState("main");
+
   return (
     <section className={styles.burgerBoard}>
       <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>

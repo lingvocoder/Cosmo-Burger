@@ -1,0 +1,23 @@
+.constructorPayment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding: 0 0.75rem 0 1rem;
+}
+
+.constructorPayment > svg {
+    height: 2.0625rem;
+    width: 2.0625rem;
+    margin-right: 2.5rem;
+}
+
+.constructorTotal {
+    font-family: Iceland, Arial, sans-serif;
+    font-size: 3rem;
+    line-height: 2.25rem;
+    composes: headerLinkText from '../app-header/app-header.module.css';
+    margin-right: 0.25rem;
+}
