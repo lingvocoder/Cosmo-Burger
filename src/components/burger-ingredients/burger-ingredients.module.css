@@ -1,0 +1,100 @@
+.burgerBoard {
+    position: relative;
+    overflow-y: auto;
+}
+
+.mainBoardInner {
+    height: 100%;
+    max-height: 64vh;
+    padding: 0 .25rem 0 1rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.mainBoardInner::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mainBoardInner::-webkit-scrollbar-track {
+    background: #2F2F37;
+}
+
+.mainBoardInner::-webkit-scrollbar-thumb {
+    border: 3px solid #8585AD;
+    background: #8585AD;
+}
+
+.mainBoardContent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(17rem, 1fr));
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+
+}
+
+.tab {
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+.tab > .tabWrapper {
+    flex: 1 1 100%;
+    text-transform: capitalize;
+}
+
+.mainBoardHeading {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.boardName {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 1920px) {
+    .mainBoardContent {
+        grid-template-columns: 66.67%;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .mainBoardContent {
+        grid-template-columns: 66.67%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerWrapper {
+        padding: 1rem 5rem;
+    }
+
+    .headerNavBar {
+        flex-wrap: wrap;
+    }
+
+    .headerLink {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .headerNavBar > svg {
+        height: 50px;
+        order: -1;
+    }
+}
+
+

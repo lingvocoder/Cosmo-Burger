@@ -1,0 +1,58 @@
+:root {
+    --max-width: 120rem;
+}
+
+.main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.mainWrapper {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5rem;
+    padding: 0 21.25rem;
+}
+
+.mainInner {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.mainBoardLeft {
+    flex: 1 1 37.5rem;
+    height: auto;
+    overflow-y: auto;
+}
+
+.mainBoardRight {
+    composes: mainBoardLeft;
+}
+
+@media screen and (max-width: 1880px) {
+    .mainWrapper {
+        padding-left: 16.25rem;
+        padding-right: 16.25rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .mainWrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .mainWrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
