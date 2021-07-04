@@ -17,9 +17,7 @@ const IngredientDetails = ({ cardData }) => {
         <div
           className={`${styles.ingredientCardItem} ${styles.ingredientCardSubTitle}`}
         >
-          <span className={` text text_type_main-medium`}>
-            Биокотлета из марсианской Магнолии
-          </span>
+          <span className={` text text_type_main-medium`}>{cardData.name}</span>
         </div>
 
         <div
