@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./burger-ingredients.module.css";
-import BurgerCard from "../burger-card/burger-card";
-import data from "../../utils/data";
-import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
+import Modal from "../modal/modal";
 import localize from "../../utils/localize";
-
-const types = [...new Set(data.map((card) => card.type))];
+import BurgerCard from "../burger-card/burger-card";
+import IngredientDetails from "../ingredient-details/ingredient-details";
+import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerIngredients = ({ ingredients }) => {
-  const [current, setCurrent] = React.useState("main");
+  const [showModal, setShowModal] = useState(false);
+  const [activeCard, setActiveCard] = useState(null);
+
+  const handleActiveCardClick = (card) => {
+    setShowModal(true);
+    setActiveCard(card);
+  };
+  const header = "Детали ингредиента";
+
+  const types = [...new Set(ingredients.map((card) => card.type))];
+  const [currentTab, setCurrentTab] = React.useState("main");
 
   return (
     <section className={styles.burgerBoard}>
@@ -18,7 +27,11 @@ const BurgerIngredients = ({ ingredients }) => {
         {types.map((type, idx) => {
           return (
             <li key={idx} className={styles.tabWrapper}>
-              <Tab active={current === type} value={type} onClick={setCurrent}>
+              <Tab
+                active={currentTab === type}
+                value={type}
+                onClick={setCurrentTab}
+              >
                 {localize(type)}
               </Tab>
             </li>
@@ -33,7 +46,11 @@ const BurgerIngredients = ({ ingredients }) => {
               <div className={styles.mainBoardContent}>
                 {ingredients.map((card) => {
                   return card.type === type ? (
-                    <BurgerCard key={card._id} cardInfo={card} />
+                    <BurgerCard
+                      handleClick={() => handleActiveCardClick(card)}
+                      key={card._id}
+                      cardInfo={card}
+                    />
                   ) : null;
                 })}
               </div>
@@ -41,6 +58,13 @@ const BurgerIngredients = ({ ingredients }) => {
           );
         })}
       </div>
+      <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        header={header}
+      >
+        <IngredientDetails cardData={activeCard} />
+      </Modal>
     </section>
   );
 };

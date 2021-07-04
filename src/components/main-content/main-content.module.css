@@ -17,21 +17,10 @@
 }
 
 .mainInner {
-    position: relative;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     gap: 2.5rem;
-}
-
-.mainBoardLeft {
-    flex: 1 1 37.5rem;
-    height: auto;
-    overflow-y: auto;
-}
-
-.mainBoardRight {
-    composes: mainBoardLeft;
 }
 
 @media screen and (max-width: 1880px) {

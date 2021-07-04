@@ -1,6 +1,7 @@
 .burgerBoard {
     position: relative;
-    overflow-y: auto;
+    flex: 1 1 37.5rem;
+    height: auto;
 }
 
 .mainBoardInner {
@@ -63,16 +64,14 @@
 
 @media screen and (max-width: 1920px) {
     .mainBoardContent {
-        grid-template-columns: 66.67%;
-        justify-content: center;
+        grid-template-columns: repeat(2, minmax(12rem, 1fr));
     }
 }
 
 
 @media screen and (max-width: 1280px) {
     .mainBoardContent {
-        grid-template-columns: 66.67%;
-        justify-content: center;
+        grid-template-columns: repeat(2, minmax(12rem, 1fr));
     }
 }
 

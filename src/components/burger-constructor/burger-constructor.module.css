@@ -1,6 +1,5 @@
 .ingredientBoard {
-    position: relative;
-    overflow-y: auto;
+    composes: burgerBoard from '../burger-ingredients/burger-ingredients.module.css';
 }
 
 .mainBoardInner {
@@ -23,20 +22,10 @@
     margin-top: 0;
 }
 
-.constructorElement {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-}
 
-.constructorElement:hover {
-    cursor: pointer;
-}
 
 .constructorFixedElement {
-    composes: constructorElement;
+    composes: constructorElement from '../constructor-item/constructor-item.module.css';
     width: 100%;
     max-width: 100%;
     padding: 0 .75rem 0 0.5rem;
@@ -54,39 +43,24 @@
     visibility: hidden;
 }
 
-.constructorElement > div {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0.5rem;
-}
 
-.constructorElement > div > span {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.constructorElement > div > span > span:nth-child(3) {
-    margin-left: auto;
-}
 
 @media screen and (max-width: 1920px) {
     .constructorFixedElement {
-        padding-right: .25rem;
+        padding-right: .75rem;
     }
 }
 
 
 @media screen and (max-width: 1280px) {
     .constructorFixedElement {
-        padding-right: .25rem;
+        padding-right: .75rem;
     }
 }
 
 @media (max-width: 768px) {
     .constructorFixedElement {
-        padding-right: .25rem;
+        padding-right: .75rem;
     }
 }
 

@@ -6,9 +6,9 @@ import {
   CurrencyIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
-const BurgerCard = ({ cardInfo }) => {
+const BurgerCard = ({ cardInfo, handleClick }) => {
   return (
-    <div className={styles.burgerCard}>
+    <div className={styles.burgerCard} onClick={handleClick}>
       <div className={styles.burgerCardRowTop}>
         <Counter count={Math.floor((Math.random() * cardInfo.proteins) / 10)} />
         <span className={styles.burgerCardImageWrapper}>

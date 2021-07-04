@@ -1,0 +1,46 @@
+.modalWrapper {
+    position: relative;
+    height: auto;
+    width: 45rem;
+    margin: 0 auto;
+    border-radius: 2.5rem;
+    background-color: #1c1c21;
+    z-index: 10;
+}
+
+.modalWrapperOrder {
+    composes: modalWrapper;
+    padding: 2.625rem 2.5rem;
+}
+
+.modalWrapperOrder .modalTitle {
+    justify-content: flex-end;
+}
+
+.modalWrapperIngredients .modalTitle {
+    justify-content: space-between;
+}
+
+.modalWrapperIngredients {
+    composes: modalWrapper;
+    padding: 2.5rem 2.5rem 0;
+}
+
+.modalTitle {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    line-height: 2.5rem;
+}
+
+
+.modalItem {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.modalItem span {
+    line-height: unset;
+}
+
