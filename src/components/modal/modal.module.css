@@ -10,7 +10,7 @@
 
 .modalWrapperOrder {
     composes: modalWrapper;
-    padding: 2.625rem 2.5rem;
+    padding: 2.5rem 2.5rem;
 }
 
 .modalWrapperOrder .modalTitle {

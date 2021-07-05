@@ -1,7 +1,7 @@
 .orderInner {
     position: relative;
-    height: 100%;
-    padding: 0.875rem 3.75rem 5rem;
+    height: auto;
+    padding: 1rem 3.75rem 5rem;
 }
 
 .orderItem {
@@ -15,7 +15,7 @@
 }
 
 .orderItemID {
-    height: 8.75rem;
+    height: 7.5rem;
     line-height: 8.75rem;
     margin-bottom: 2rem;
 }
