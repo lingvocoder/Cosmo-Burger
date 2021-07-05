@@ -28,6 +28,7 @@ const Modal = ({ children, header, onClose, show }) => {
     <>
       <ModalOverlay onClose={onClose}>
         <div
+          onClick={(e) => e.stopPropagation()}
           className={
             header
               ? `${styles.modalWrapperIngredients}`
