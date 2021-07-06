@@ -28,8 +28,6 @@ const BurgerIngredients = ({ ingredients }) => {
     setActiveCard(card);
   };
 
-  console.log(types);
-
   return (
     <section className={styles.burgerBoard}>
       <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
