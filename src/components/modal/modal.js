@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import ReactDOM from "react-dom";
-import PropTypes, { any } from "prop-types";
+import PropTypes, { any, element } from "prop-types";
 import styles from "./modal.module.css";
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
@@ -51,7 +51,7 @@ const Modal = ({ children, header, onClose, show }) => {
 };
 
 Modal.propTypes = {
-  children: PropTypes.instanceOf(Element),
+  children: PropTypes.element,
   onClose: PropTypes.func,
   show: PropTypes.bool,
   header: PropTypes.string,
