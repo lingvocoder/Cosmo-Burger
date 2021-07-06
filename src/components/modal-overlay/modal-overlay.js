@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./modal-overlay.module.css";
+import PropTypes from "prop-types";
 
 const ModalOverlay = ({ onClose, children }) => {
   return (
@@ -9,4 +10,8 @@ const ModalOverlay = ({ onClose, children }) => {
   );
 };
 
+ModalOverlay.propTypes = {
+  onClose: PropTypes.func,
+  children: PropTypes.instanceOf(Element),
+};
 export default ModalOverlay;

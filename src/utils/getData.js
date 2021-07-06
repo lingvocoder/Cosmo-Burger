@@ -3,7 +3,9 @@ async function getBurgerData(setStateMethod) {
 
   function checkStatus(response) {
     if (response.status !== 200) {
-      return Promise.reject(new Error(response.statusText));
+      return Promise.reject(
+        new Error("Что-то пошло не так:" + response.statusText)
+      );
     } else {
       return Promise.resolve(response);
     }
@@ -18,9 +20,6 @@ async function getBurgerData(setStateMethod) {
     .then(toJson)
     .then(({ data: burgerIngredients }) => {
       setStateMethod(burgerIngredients);
-    })
-    .catch(function (e) {
-      throw new Error("There is no data for the request" + e.message);
     });
 }
 export default getBurgerData;

@@ -11,35 +11,43 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerConstructor = ({ constructor }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [activeOrder, setActiveOrder] = useState(0);
-
-  const handlePaymentClick = (total) => {
-    setShowModal(true);
-    setActiveOrder(total);
-  };
-  const fixedBun = constructor.filter((elem) => elem.type === "bun");
   const newData = constructor
     .filter((elem) => elem.type !== "bun")
     .map((elem) => elem);
-  const total = newData.reduce((acc, curr) => acc + curr.price, 0);
+  const fixedBun = constructor.filter((elem) => elem.type === "bun")[0];
+
+  const [showModal, setShowModal] = useState(false);
+  const [activeOrder, setActiveOrder] = useState({
+    total: 1000,
+    id: 0,
+  });
+
+  const handlePaymentClick = () => {
+    setShowModal(true);
+    setActiveOrder((prevState) => {
+      return { ...prevState, id: 12345 };
+    });
+  };
+  console.log(fixedBun);
 
   return (
     <section className={styles.ingredientBoard}>
       <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
-      {fixedBun.length &&
-        [fixedBun.shift()].map((bun) => (
-          <div key={bun._id} className={styles.constructorFixedElement}>
-            <DragIcon type={"primary"} />
-            <ConstructorElement
-              type={"top"}
-              text={bun.name}
-              thumbnail={bun.image}
-              price={bun.price}
-              isLocked={true}
-            />
-          </div>
-        ))}
+      {fixedBun && (
+        <div
+          key={fixedBun._id + "top"}
+          className={styles.constructorFixedElement}
+        >
+          <DragIcon type={"primary"} />
+          <ConstructorElement
+            type={"top"}
+            text={fixedBun.name}
+            thumbnail={fixedBun.image}
+            price={fixedBun.price}
+            isLocked={true}
+          />
+        </div>
+      )}
       <div className={styles.mainBoardInner}>
         <ul className={styles.mainBoardContent}>
           {newData.length &&
@@ -56,25 +64,27 @@ const BurgerConstructor = ({ constructor }) => {
             ))}
         </ul>
       </div>
-      {fixedBun.length &&
-        [fixedBun.pop()].map((bun) => (
-          <div key={bun._id} className={styles.constructorFixedElement}>
-            <DragIcon type={"primary"} />
-            <ConstructorElement
-              type={"bottom"}
-              text={bun.name}
-              thumbnail={bun.image}
-              price={bun.price}
-              isLocked={true}
-            />
-          </div>
-        ))}
+      {fixedBun && (
+        <div
+          key={fixedBun._id + "bottom"}
+          className={styles.constructorFixedElement}
+        >
+          <DragIcon type={"primary"} />
+          <ConstructorElement
+            type={"bottom"}
+            text={fixedBun.name}
+            thumbnail={fixedBun.image}
+            price={fixedBun.price}
+            isLocked={true}
+          />
+        </div>
+      )}
       <BurgerPayment
-        paymentData={activeOrder}
-        handleClick={() => handlePaymentClick(total)}
+        orderData={activeOrder}
+        handleClick={() => handlePaymentClick()}
       />
       <Modal show={showModal} onClose={() => setShowModal(false)} header={null}>
-        <OrderDetails paymentData={activeOrder} />
+        <OrderDetails orderData={activeOrder} />
       </Modal>
     </section>
   );

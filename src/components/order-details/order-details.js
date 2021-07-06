@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./order-details.module.css";
 import { ReactComponent as CheckMarkIcon } from "../../images/checkicon.svg";
+import PropTypes from "prop-types";
 
-const OrderDetails = ({ paymentData }) => {
+const OrderDetails = ({ orderData }) => {
   return (
     <>
       <div className={styles.orderInner}>
         <div className={`${styles.orderItemID} ${styles.orderItem} `}>
-          <span className="text text_type_digits-large">123467</span>
+          <span className="text text_type_digits-large">{orderData.id}</span>
         </div>
         <div className={`${styles.orderItem} ${styles.orderSubTitle}`}>
           <span className={`text text_type_main-medium`}>
@@ -31,4 +32,9 @@ const OrderDetails = ({ paymentData }) => {
     </>
   );
 };
+
+OrderDetails.propTypes = {
+  orderData: PropTypes.object,
+};
+
 export default OrderDetails;

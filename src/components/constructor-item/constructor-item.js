@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./constructor-item.module.css";
+import PropTypes from "prop-types";
 import {
   ConstructorElement,
   DragIcon,
@@ -23,4 +24,8 @@ const ConstructorItem = ({ item, handleClick }) => {
   );
 };
 
+ConstructorItem.propTypes = {
+  item: PropTypes.object,
+  handleClick: PropTypes.func,
+};
 export default ConstructorItem;

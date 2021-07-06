@@ -6,10 +6,10 @@ import {
   CurrencyIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
-const BurgerPayment = ({ paymentData, handleClick }) => {
+const BurgerPayment = ({ orderData, handleClick }) => {
   return (
     <div className={styles.constructorPayment}>
-      <span className={styles.constructorTotal}>{paymentData}</span>
+      <span className={styles.constructorTotal}>{orderData.total}</span>
       <CurrencyIcon type={"primary"} />
       <Button type={"primary"} size={"large"} onClick={handleClick}>
         Оформить заказ
@@ -19,6 +19,7 @@ const BurgerPayment = ({ paymentData, handleClick }) => {
 };
 
 BurgerPayment.propTypes = {
-  paymentData: PropTypes.arrayOf(PropTypes.object),
+  orderData: PropTypes.object,
+  handleClick: PropTypes.func,
 };
 export default BurgerPayment;

@@ -32,6 +32,7 @@ const BurgerCard = ({ cardInfo, handleClick }) => {
 
 BurgerCard.propTypes = {
   cardInfo: PropTypes.object,
+  handleClick: PropTypes.func,
 };
 
 export default BurgerCard;
