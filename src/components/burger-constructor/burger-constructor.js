@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./burger-constructor.module.css";
 import Modal from "../modal/modal";
@@ -11,9 +11,11 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerConstructor = ({ constructor }) => {
-  const newData = constructor
-    .filter((elem) => elem.type !== "bun")
-    .map((elem) => elem);
+  const newData = useMemo(() => {
+    return constructor
+      .filter((elem) => elem.type !== "bun")
+      .map((elem) => elem);
+  }, [constructor]);
   const fixedBun = constructor.filter((elem) => elem.type === "bun")[0];
 
   const [showModal, setShowModal] = useState(false);
