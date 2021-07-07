@@ -14,16 +14,22 @@ const AppHeader = () => {
         <nav className={styles.headerNavBar}>
           <a href="#" className={styles.headerLink}>
             <BurgerIcon type={"primary"} />
-            <span className={styles.headerLinkText}>Конструктор</span>
+            <span className="ml-2 text text_type_main-default">
+              Конструктор
+            </span>
           </a>
           <a href="#" className={styles.headerLink}>
             <ListIcon type={"secondary"} />
-            <span className={styles.headerLinkText}>Лента заказов</span>
+            <span className="ml-2 text text_type_main-default text_color_inactive">
+              Лента заказов
+            </span>
           </a>
           <Logo />
           <a href="#" className={styles.headerLink}>
             <ProfileIcon type={"secondary"} />
-            <span className={styles.headerLinkText}>Личный кабинет</span>
+            <span className="ml-2 text text_type_main-default text_color_inactive">
+              Личный кабинет
+            </span>
           </a>
         </nav>
       </div>

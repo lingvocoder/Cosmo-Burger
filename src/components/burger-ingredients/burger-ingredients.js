@@ -1,54 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./burger-ingredients.module.css";
-import BurgerCard from "../burger-card/burger-card";
-import data from "../../utils/data";
+import Modal from "../modal/modal";
+import localize from "../../utils/localize";
+import IngredientCard from "../ingredient-card/ingredient-card";
+import IngredientDetails from "../ingredient-details/ingredient-details";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
-const types = [...new Set(data.map((card) => card.type))];
-
-function localize(item) {
-  return item === "bun"
-    ? item === "main"
-      ? "начинки"
-      : "булки"
-    : item === "sauce"
-    ? "соусы"
-    : "начинки";
-}
-
 const BurgerIngredients = ({ ingredients }) => {
-  const [current, setCurrent] = React.useState("main");
+  const [showModal, setShowModal] = useState(false);
+  const [activeCard, setActiveCard] = useState({});
+  const [currentTab, setCurrentTab] = React.useState("main");
+  const modalTitle = "Детали ингредиента";
+  const key = "type";
+  const types = [
+    ...new Map(
+      ingredients
+        .map((item) => {
+          return { type: item.type, id: item._id };
+        })
+        .map((item) => [item[key], item])
+    ).values(),
+  ];
+
+  const handleActiveCardClick = (card) => {
+    setShowModal(true);
+    setActiveCard(card);
+  };
+
   return (
     <section className={styles.burgerBoard}>
-      <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
+      <h1 className={`${styles.burgerBoardHeading} text text_type_main-large`}>
+        Соберите бургер
+      </h1>
       <ul className={styles.tab}>
-        {types.map((type, idx) => {
+        {types.map((type) => {
           return (
-            <li key={idx} className={styles.tabWrapper}>
-              <Tab active={current === type} value={type} onClick={setCurrent}>
-                {localize(type)}
+            <li key={type.id} className={styles.tabWrapper}>
+              <Tab
+                active={currentTab === type.type}
+                value={type.type}
+                onClick={setCurrentTab}
+              >
+                {localize(type.type)}
               </Tab>
             </li>
           );
         })}
       </ul>
-      <div className={styles.mainBoardInner}>
+      <div className={styles.burgerBoardInner}>
         {types.map((type) => {
           return (
-            <>
-              <h2 className={styles.boardName}>{localize(type)}</h2>
-              <div className={styles.mainBoardContent}>
+            <React.Fragment key={type.id}>
+              <h2 className={`${styles.boardName} text text_type_main-medium`}>
+                {localize(type.type)}
+              </h2>
+              <div className={styles.burgerBoardContent}>
                 {ingredients.map((card) => {
-                  return card.type === type ? (
-                    <BurgerCard key={card._id} cardInfo={card} />
+                  return card.type === type.type ? (
+                    <IngredientCard
+                      handleClick={() => handleActiveCardClick(card)}
+                      key={card._id}
+                      cardInfo={card}
+                    />
                   ) : null;
                 })}
               </div>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
+      <Modal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        title={modalTitle}
+      >
+        <IngredientDetails cardData={activeCard} />
+      </Modal>
     </section>
   );
 };

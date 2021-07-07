@@ -1,0 +1,28 @@
+.constructorElement {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.constructorElement:hover {
+    cursor: pointer;
+}
+
+.constructorElement > div {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0.5rem;
+}
+
+.constructorElement > div > span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.constructorElement > div > span > span:nth-child(3) {
+    margin-left: auto;
+}

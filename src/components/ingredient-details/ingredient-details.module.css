@@ -1,0 +1,58 @@
+
+.ingredientCardInner {
+    position: relative;
+    height: auto;
+    padding: 0 3.75rem 3.75rem;
+}
+
+.ingredientCardItem {
+    composes: modalItem from '../modal/modal.module.css';
+}
+
+.ingredientCardTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    line-height: 2.5rem;
+}
+
+.ingredientCardImageWrapper {
+    composes: ingredientCardImageWrapper from '../ingredient-card/ingredient-card.module.css';
+    padding: 0 1.25rem;
+}
+
+.ingredientCardImage {
+    composes: ingredientCardImage from '../ingredient-card/ingredient-card.module.css';
+}
+
+.ingredientCardSubTitle {
+    composes: orderSubTitle from '../order-details/order-details.module.css';
+    line-height: 1.75rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.ingredientCardInfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1.75rem;
+}
+
+.ingredientCardInfoItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ingredientCardInfoItem span {
+    flex: 1 1 100%;
+    line-height: 1.5rem;
+}
+
+.ingredientCardInfoItem span:nth-child(1) {
+    margin-bottom: 0.5rem;
+}

@@ -1,0 +1,49 @@
+.orderInner {
+    position: relative;
+    height: auto;
+    padding: 1rem 3.75rem 5rem;
+}
+
+.orderItem {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.orderItem span {
+    line-height: unset;
+}
+
+.orderItemID {
+    height: 7.5rem;
+    line-height: 8.75rem;
+    margin-bottom: 2rem;
+}
+
+.orderSubTitle {
+    height: 1.875rem;
+    line-height: 1.5rem;
+    margin-bottom: 3.75rem;
+}
+
+.orderIconStatus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7.5rem;
+    width: 7.5rem;
+    margin-bottom: 3.75rem;
+}
+
+.orderIconStatus > svg {
+    height: 6.375rem;
+    width: 6.6875rem;
+}
+
+.orderAnnouncement {
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+.orderAnnouncement:not(:last-child) {
+    margin-bottom: 0.5rem;
+}

@@ -1,24 +1,23 @@
 import React from "react";
 import styles from "./main-content.module.css";
+import PropTypes from "prop-types";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients";
 import BurgerConstructor from "../burger-constructor/burger-constructor";
-import data from "../../utils/data";
 
-const MainContent = () => {
+const MainContent = ({ data }) => {
   return (
     <main className={styles.main}>
       <div className={styles.mainWrapper}>
         <div className={styles.mainInner}>
-          <div className={styles.mainBoardLeft}>
-            <BurgerIngredients ingredients={data} />
-          </div>
-          <div className={styles.mainBoardRight}>
-            <BurgerConstructor constructor={data} />
-          </div>
+          <BurgerIngredients ingredients={data} />
+          <BurgerConstructor constructor={data} />
         </div>
       </div>
     </main>
   );
 };
 
+MainContent.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 export default MainContent;

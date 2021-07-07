@@ -1,20 +1,19 @@
-.ingredientBoard {
-    position: relative;
-    overflow-y: auto;
+.constructorBoard {
+    composes: burgerBoard from '../burger-ingredients/burger-ingredients.module.css';
 }
 
-.mainBoardInner {
-    composes: mainBoardInner from '../burger-ingredients/burger-ingredients.module.css';
+.constructorBoardInner {
+    composes: burgerBoardInner from '../burger-ingredients/burger-ingredients.module.css';
     max-height: 45vh;
     padding-left: 0.5rem;
 }
 
-.mainBoardHeading {
-    composes: mainBoardHeading from '../burger-ingredients/burger-ingredients.module.css';
+.constructorBoardHeading {
+    composes: burgerBoardHeading from '../burger-ingredients/burger-ingredients.module.css';
     visibility: hidden;
 }
 
-.mainBoardContent {
+.constructorBoardContent {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -23,91 +22,41 @@
     margin-top: 0;
 }
 
-.constructorElement {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-.constructorElement:hover {
-    cursor: pointer;
-}
-
 .constructorFixedElement {
-    composes: constructorElement;
+    composes: constructorElement from '../constructor-item/constructor-item.module.css';
     width: 100%;
     max-width: 100%;
     padding: 0 .75rem 0 0.5rem;
 }
+
 .constructorFixedElement:nth-of-type(1) {
     margin-bottom: 1rem;
 }
+
 .constructorFixedElement:nth-last-of-type(2) {
     margin-top: 1rem;
 }
+
 .constructorFixedElement > svg {
     visibility: hidden;
 }
 
-.constructorElement > div {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0.5rem;
-}
-
-.constructorElement > div > span {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.constructorElement > div > span > span:nth-child(3) {
-    margin-left: auto;
-}
-
-.constructorPayment {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 2.5rem;
-    padding: 0 0.75rem 0 1rem;
-}
-
-.constructorPayment > svg {
-    height: 2.0625rem;
-    width: 2.0625rem;
-    margin-right: 2.5rem;
-}
-
-.constructorTotal {
-    font-family: Iceland, Arial, sans-serif;
-    font-size: 3rem;
-    line-height: 2.25rem;
-    composes: headerLinkText from '../app-header/app-header.module.css';
-    margin-right: 0.25rem;
-}
-
 @media screen and (max-width: 1920px) {
     .constructorFixedElement {
-        padding-right: .25rem;
+        padding-right: .75rem;
     }
 }
 
 
 @media screen and (max-width: 1280px) {
     .constructorFixedElement {
-        padding-right: .25rem;
+        padding-right: .75rem;
     }
 }
 
 @media (max-width: 768px) {
     .constructorFixedElement {
-        padding-right: .25rem;
+        padding-right: .75rem;
     }
 }
 
