@@ -35,10 +35,6 @@
     margin-bottom: 3.75rem;
 }
 
-.orderIconStatus:hover {
-    cursor: pointer;
-}
-
 .orderIconStatus > svg {
     height: 6.375rem;
     width: 6.6875rem;

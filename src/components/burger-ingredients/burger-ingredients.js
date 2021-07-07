@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./burger-ingredients.module.css";
 import Modal from "../modal/modal";
 import localize from "../../utils/localize";
-import BurgerCard from "../burger-card/burger-card";
+import IngredientCard from "../ingredient-card/ingredient-card";
 import IngredientDetails from "../ingredient-details/ingredient-details";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
@@ -11,7 +11,7 @@ const BurgerIngredients = ({ ingredients }) => {
   const [showModal, setShowModal] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
   const [currentTab, setCurrentTab] = React.useState("main");
-  const header = "Детали ингредиента";
+  const modalTitle = "Детали ингредиента";
   const key = "type";
   const types = [
     ...new Map(
@@ -30,7 +30,9 @@ const BurgerIngredients = ({ ingredients }) => {
 
   return (
     <section className={styles.burgerBoard}>
-      <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
+      <h1 className={`${styles.burgerBoardHeading} text text_type_main-large`}>
+        Соберите бургер
+      </h1>
       <ul className={styles.tab}>
         {types.map((type) => {
           return (
@@ -46,15 +48,17 @@ const BurgerIngredients = ({ ingredients }) => {
           );
         })}
       </ul>
-      <div className={styles.mainBoardInner}>
+      <div className={styles.burgerBoardInner}>
         {types.map((type) => {
           return (
-            <>
-              <h2 className={styles.boardName}>{localize(type.type)}</h2>
-              <div className={styles.mainBoardContent}>
+            <React.Fragment key={type.id}>
+              <h2 className={`${styles.boardName} text text_type_main-medium`}>
+                {localize(type.type)}
+              </h2>
+              <div className={styles.burgerBoardContent}>
                 {ingredients.map((card) => {
                   return card.type === type.type ? (
-                    <BurgerCard
+                    <IngredientCard
                       handleClick={() => handleActiveCardClick(card)}
                       key={card._id}
                       cardInfo={card}
@@ -62,14 +66,14 @@ const BurgerIngredients = ({ ingredients }) => {
                   ) : null;
                 })}
               </div>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
       <Modal
         show={showModal}
         onClose={() => setShowModal(false)}
-        header={header}
+        title={modalTitle}
       >
         <IngredientDetails cardData={activeCard} />
       </Modal>

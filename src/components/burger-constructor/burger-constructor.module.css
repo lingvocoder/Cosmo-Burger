@@ -1,19 +1,19 @@
-.ingredientBoard {
+.constructorBoard {
     composes: burgerBoard from '../burger-ingredients/burger-ingredients.module.css';
 }
 
-.mainBoardInner {
-    composes: mainBoardInner from '../burger-ingredients/burger-ingredients.module.css';
+.constructorBoardInner {
+    composes: burgerBoardInner from '../burger-ingredients/burger-ingredients.module.css';
     max-height: 45vh;
     padding-left: 0.5rem;
 }
 
-.mainBoardHeading {
-    composes: mainBoardHeading from '../burger-ingredients/burger-ingredients.module.css';
+.constructorBoardHeading {
+    composes: burgerBoardHeading from '../burger-ingredients/burger-ingredients.module.css';
     visibility: hidden;
 }
 
-.mainBoardContent {
+.constructorBoardContent {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -21,8 +21,6 @@
     margin-bottom: 0;
     margin-top: 0;
 }
-
-
 
 .constructorFixedElement {
     composes: constructorElement from '../constructor-item/constructor-item.module.css';
@@ -42,8 +40,6 @@
 .constructorFixedElement > svg {
     visibility: hidden;
 }
-
-
 
 @media screen and (max-width: 1920px) {
     .constructorFixedElement {

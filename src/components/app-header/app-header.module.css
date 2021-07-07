@@ -40,19 +40,11 @@
     margin: 0 calc(562px / 2) 0 auto;
 }
 
-.headerLinkText {
-    margin-left: .5rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: normal;
-    color: #8585ad;
-}
-
 .headerLink:first-child {
     margin-left: 0;
 }
 
-.headerLink:first-child > .headerLinkText {
+.headerLink:first-child {
     color: #ffffff;
 }
 

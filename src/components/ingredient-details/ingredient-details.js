@@ -53,7 +53,9 @@ const IngredientDetails = ({ cardData }) => {
     </>
   );
 };
+
 IngredientDetails.propTypes = {
   cardData: PropTypes.object,
 };
+
 export default IngredientDetails;

@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect } from "react";
 import ReactDOM from "react-dom";
-import PropTypes, { any, element } from "prop-types";
+import PropTypes from "prop-types";
 import styles from "./modal.module.css";
 import ModalOverlay from "../modal-overlay/modal-overlay";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const modalRoot = document.getElementById("modal");
 
-const Modal = ({ children, header, onClose, show }) => {
+const Modal = ({ children, title, onClose, show }) => {
   const closeOnEscapeKeyDown = useCallback(
     (e) => {
       if ((e.charCode || e.keyCode) === 27) {
@@ -31,14 +31,14 @@ const Modal = ({ children, header, onClose, show }) => {
         <div
           onClick={(e) => e.stopPropagation()}
           className={
-            header
+            title
               ? `${styles.modalWrapperIngredients}`
               : `${styles.modalWrapperOrder}`
           }
         >
           <div className={`${styles.modalItem} ${styles.modalTitle} `}>
-            {header && (
-              <span className={` text text_type_main-large`}>{header}</span>
+            {title && (
+              <span className={` text text_type_main-large`}>{title}</span>
             )}
             <CloseIcon type={"primary"} onClick={onClose} />
           </div>

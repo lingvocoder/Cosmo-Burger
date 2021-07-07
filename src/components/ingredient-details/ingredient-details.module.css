@@ -18,12 +18,12 @@
 }
 
 .ingredientCardImageWrapper {
-    composes: burgerCardImageWrapper from '../burger-card/burger-card.module.css';
+    composes: ingredientCardImageWrapper from '../ingredient-card/ingredient-card.module.css';
     padding: 0 1.25rem;
 }
 
 .ingredientCardImage {
-    composes: burgerCardImage from '../burger-card/burger-card.module.css';
+    composes: ingredientCardImage from '../ingredient-card/ingredient-card.module.css';
 }
 
 .ingredientCardSubTitle {

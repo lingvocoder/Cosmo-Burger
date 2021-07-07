@@ -28,11 +28,10 @@ const BurgerConstructor = ({ constructor }) => {
       return { ...prevState, id: 12345 };
     });
   };
-  console.log(fixedBun);
 
   return (
-    <section className={styles.ingredientBoard}>
-      <h1 className={styles.mainBoardHeading}>Соберите бургер</h1>
+    <section className={styles.constructorBoard}>
+      <h1 className={styles.constructorBoardHeading}>Соберите бургер</h1>
       {fixedBun && (
         <div
           key={fixedBun._id + "top"}
@@ -48,8 +47,8 @@ const BurgerConstructor = ({ constructor }) => {
           />
         </div>
       )}
-      <div className={styles.mainBoardInner}>
-        <ul className={styles.mainBoardContent}>
+      <div className={styles.constructorBoardInner}>
+        <ul className={styles.constructorBoardContent}>
           {newData.length &&
             newData.map((item) => (
               <ConstructorItem item={item} key={item._id}>
