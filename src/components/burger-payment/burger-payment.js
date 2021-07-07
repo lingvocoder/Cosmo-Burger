@@ -19,7 +19,10 @@ const BurgerPayment = ({ orderData, handleClick }) => {
 };
 
 BurgerPayment.propTypes = {
-  orderData: PropTypes.object,
+  orderData: PropTypes.shape({
+    total: PropTypes.number,
+    id: PropTypes.number,
+  }),
   handleClick: PropTypes.func,
 };
 export default BurgerPayment;

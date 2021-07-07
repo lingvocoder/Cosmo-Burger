@@ -39,7 +39,7 @@ const IngredientCard = ({ cardInfo, handleClick }) => {
 };
 
 IngredientCard.propTypes = {
-  cardInfo: PropTypes.object,
+  cardInfo: PropTypes.object.isRequired,
   handleClick: PropTypes.func,
 };
 

@@ -9,7 +9,7 @@ import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const BurgerIngredients = ({ ingredients }) => {
   const [showModal, setShowModal] = useState(false);
-  const [activeCard, setActiveCard] = useState(null);
+  const [activeCard, setActiveCard] = useState({});
   const [currentTab, setCurrentTab] = React.useState("main");
   const modalTitle = "Детали ингредиента";
   const key = "type";

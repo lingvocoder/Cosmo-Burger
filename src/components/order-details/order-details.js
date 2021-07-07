@@ -34,7 +34,10 @@ const OrderDetails = ({ orderData }) => {
 };
 
 OrderDetails.propTypes = {
-  orderData: PropTypes.object,
+  orderData: PropTypes.shape({
+    total: PropTypes.number,
+    id: PropTypes.number,
+  }),
 };
 
 export default OrderDetails;

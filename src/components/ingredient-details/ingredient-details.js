@@ -55,7 +55,7 @@ const IngredientDetails = ({ cardData }) => {
 };
 
 IngredientDetails.propTypes = {
-  cardData: PropTypes.object,
+  cardData: PropTypes.object.isRequired,
 };
 
 export default IngredientDetails;
